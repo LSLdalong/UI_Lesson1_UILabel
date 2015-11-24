@@ -13,13 +13,59 @@
 @end
 
 @implementation AppDelegate
-
+-(void)dealloc
+{
+    //dalongtest
+    [_window release];
+    [super dealloc];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    UIView *rootView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    rootView.backgroundColor = [UIColor whiteColor];
+    [_window addSubview:rootView];
+    [rootView release];
+    
+    
+    //UILabel
+    
+    UILabel *laber =[[ UILabel alloc]initWithFrame:CGRectMake(50, 50, 200, 200)];
+    laber.backgroundColor =[UIColor cyanColor];
+    [rootView addSubview:laber];
+    //文本
+    laber.text = @"heheheheheheheheheeheh";
+    //字体大小
+    laber.font = [UIFont systemFontOfSize:44];
+    //对齐方式
+    laber.textAlignment =NSTextAlignmentCenter;
+    
+    //字体颜色
+    laber.textColor = [UIColor yellowColor];
+    //阴影
+//    laber.shadowColor = [UIColor blackColor];
+//    laber.shadowOffset = CGSizeMake(5, 0);
+    
+    CGRectGetMaxX(laber.frame);
+    
+    //设置行数，设置为0的时候是自动换行
+    laber.numberOfLines = 0;
+    
+    //laber.lineBreakMode =
+    
+    
+    //来自父类的属性
+//    laber.tag
+//    laber.alpha
+//    laber.hidden
+//    laber.superview
+//    laber.subviews
+    
     return YES;
 }
 
