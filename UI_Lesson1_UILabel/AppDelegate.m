@@ -15,6 +15,9 @@
 @implementation AppDelegate
 -(void)dealloc
 {
+    /**
+     *  dalong test2
+     */
     //dalongtest
     [_window release];
     [super dealloc];
